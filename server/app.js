@@ -30,6 +30,9 @@ app.get("*", (req, res) => {
   "index.html"));
 });
 
+app.set('port', process.env.PORT || 5000);
+console.log("++++++++++++++++" + app.get('port'));
+
 app.post("/profile/addpost", async (req, res) => {
   const id = req.body.id;
   const title = req.body.title;
@@ -212,7 +215,7 @@ app.get("/getposts", async (req, res) => {
   }
 });
 
-app.listen(3001, () => {
+app.listen(process.env.PORT, () => {
   console.log("listening to port 3001");
 });
 
