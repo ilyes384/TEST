@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "devStart": "nodemon index.js",
-    "socketStart" : "nodemon chat.js"
+    "socketStart" : "nodemon chat.js" ,
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
   },
   "author": "",
   "license": "ISC",
@@ -24,5 +25,8 @@
     "cross-env": "^7.0.3",
     "nodemon": "^2.0.12",
     "concurrently": "^4.0.1"
-  }
+  },
+  "engines": {
+    "node": "16.13.0"
+}
 }
